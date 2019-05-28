@@ -13,7 +13,7 @@ Other point is that running more than one instance of the project only one insta
 
 ### Change schedule 
 
-Unfortunately the way to change cron is update at database :( 
+Unfortunately the way to change cron is update at database :disappointed:
 
 ```sql
 UPDATE QRTZ_CRON_TRIGGERS
