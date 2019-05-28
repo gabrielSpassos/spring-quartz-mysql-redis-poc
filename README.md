@@ -7,4 +7,4 @@ UPDATE QRTZ_CRON_TRIGGERS
 SET CRON_EXPRESSION = '0 0/5 * 1/1 * ? *'
 WHERE TRIGGER_NAME = 'updateBankStatusCacheTrigger';
 ```
-:wip: Build endpoint to do this. 
+:construction: Build endpoint to do this. 
