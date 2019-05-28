@@ -20,4 +20,5 @@ UPDATE QRTZ_CRON_TRIGGERS
 SET CRON_EXPRESSION = '0 0/5 * 1/1 * ? *'
 WHERE TRIGGER_NAME = 'updateBankStatusCacheTrigger';
 ```
-:construction: Build endpoint to do this. 
+
+Created endpoint to do this. But quartz don't changes in real time :disappointed: . Only after the job is executed the new cron expression is used. 

@@ -45,6 +45,9 @@ public class BankStatusController {
     }
 
     @PatchMapping(value = "/v1/bank/status")
+    @ApiResponses(value = {
+            @ApiResponse(code = OK, message = OK_MESSAGE, response = BankStatusResponse.class)
+    })
     public ResponseEntity<?> updateBankStatus(@RequestParam @Valid BankStatusEnum newBankStatus) {
         return Stream.of(bankService.updateBankStatus(newBankStatus.name()))
                 .map(this::convertDTOToResponse)
