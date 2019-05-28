@@ -45,8 +45,8 @@ public class BankStatusController {
     }
 
     @PatchMapping(value = "/v1/bank/status")
-    public ResponseEntity<?> updateBankStatus(@RequestParam @Valid BankStatusEnum bankStatusEnum) {
-        return Stream.of(bankService.updateBankStatus(bankStatusEnum.name()))
+    public ResponseEntity<?> updateBankStatus(@RequestParam @Valid BankStatusEnum newBankStatus) {
+        return Stream.of(bankService.updateBankStatus(newBankStatus.name()))
                 .map(this::convertDTOToResponse)
                 .map(ResponseEntity::ok)
                 .findFirst()
