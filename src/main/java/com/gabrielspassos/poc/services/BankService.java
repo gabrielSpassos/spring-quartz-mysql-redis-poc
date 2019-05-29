@@ -46,6 +46,9 @@ public class BankService {
     public BankStatusCacheEntity updateCachedBankStatus() {
         BankStatusEntity bankStatusEntity = bankStatusRepository.findTopByOrderByIdDesc();
         List<BankStatusCacheEntity> bankStatusCacheEntities = Lists.newArrayList(bankStatusCacheRepository.findAll());
+        if(bankStatusCacheEntities.isEmpty()) {
+            return bankStatusCacheRepository.save(new BankStatusCacheEntity(bankStatusEntity.getStatus()));
+        }
         return bankStatusCacheEntities.stream()
                 .findFirst()
                 .map(bankStatusCacheEntity -> {
